@@ -1,8 +1,0 @@
-[   {"info": "API de usuarios"},
-    {"usuarios":
-        [
-            {"nombre": "Lautaro", "password": 123},
-            {"nombre": "Miguel", "password": 456}
-        ]
-    }
-]
