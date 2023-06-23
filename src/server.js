@@ -7,10 +7,6 @@ require('./db.js')
 
 server.name = 'ecommerceApi' //Nombrar al servidor
 
-// server.get('/', (req,res) => {
-//     res.status(200).send('Hola estas conectado correctamente')
-// })
-
 //MIDDLEWARE BODY PARSER
 server.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }))
 server.use(bodyParser.json({ limit: "50mb" }))
@@ -21,11 +17,12 @@ server.use('/', routes)
 
 // MIDDLEWARE DE CACHEO DE ERRORES
 server.use((err, req, res, next) => {
-    const status = err.status || 500
-    const message = err.message || err
-    console.error(err)
-    res.status(status).send(message)
-})
+    // eslint-disable-line no-unused-vars
+    const status = err.status || 500;
+    const message = err.message || err;
+    console.error(err);
+    res.status(status).send(message);
+  })
 
 
 

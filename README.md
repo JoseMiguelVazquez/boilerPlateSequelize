@@ -12,7 +12,8 @@ Creamos un script en el package.json llamado start que nos dirige a correr el ar
 `  "start": "node --watch ./src/index.js"  `
 
 #Paso 4
-Instalamos express y pg
+Instalamos express y pg (mas adelante body-parser paraconvertir a JSON e ingresar al body)
 `npm install express`
 `npm install pg`
+`npm install body-parser`
 
