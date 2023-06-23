@@ -41,5 +41,29 @@ router.post('/', async (req,res) => {
     } 
 })
 
+// Ruta para editar un producto
+router.patch('/:id', async (req,res) => {
+    try {
+        const id = parseInt(req.params.id)
+        const data = req.body
+        await Product.update(data, { where: { id: id } })
+
+        res.status(200).json('Producto actualizado correctamente')
+    } catch (error) {
+        console.log(error)
+        res.status(400).json(error)
+    } 
+})
+
+router.delete('/:id', async (req,res) => {
+    try {
+        const id = parseInt(req.params.id)
+        await Product.destroy({ where: { id: id } })
+        res.status(200).json('Producto eliminado correctamente')
+    } catch (error) {
+        console.log(error)
+        res.status(400).json(error)
+    } 
+})
 
 module.exports = router
